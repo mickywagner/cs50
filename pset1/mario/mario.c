@@ -3,13 +3,25 @@
 
 int main(void)
 {
-    // Ask user for height
+    // Get height of stairs
     int height;
     do
     {
-        height = get_int("Staircase height? ");
+        height = get_int("Height: ");
     } while (height < 1 | height > 8);
     
-    printf("%i\n", height);
+    // Create loop for lines
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < i + 1; j++)
+        {
+           printf("#");
+        }
+        printf("\n");
+    }
+   
    
 }
+
+
+
