@@ -8,9 +8,10 @@ int main(void)
     do
     {
         height = get_int("Height: ");
-    } while (height < 1 | height > 8);
+    } 
+    while (height < 1 | height > 8);
     
-    // Create loop for lines
+    // Create loop for lines, spaces, and hashes
     for (int i = 0; i < height; i++)
     {
         for (int k = i; k < height - 1; k++) 
@@ -20,7 +21,7 @@ int main(void)
         
         for (int j = 0; j < i + 1; j++)
         {
-           printf("#");
+            printf("#");
         }
         printf("\n");
     }
