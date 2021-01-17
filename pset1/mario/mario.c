@@ -23,6 +23,14 @@ int main(void)
         {
             printf("#");
         }
+        
+        printf("  ");
+        
+        for (int j = 0; j < i + 1; j++)
+        {
+            printf("#");
+        }
+        
         printf("\n");
     }
    
