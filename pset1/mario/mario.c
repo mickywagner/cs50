@@ -23,9 +23,10 @@ int main(void)
         {
             printf("#");
         }
-        
+       
         printf("  ");
-        
+       
+        // build second pyramid
         for (int j = 0; j < i + 1; j++)
         {
             printf("#");
@@ -34,7 +35,4 @@ int main(void)
         printf("\n");
     }
    
-   
 }
-
-
