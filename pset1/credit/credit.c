@@ -11,7 +11,15 @@ int main(void)
     }
     while (creditCardNumber < 0);
     
-    printf("%ld\n", creditCardNumber);
+    if (creditCardNumber < 13 || creditCardNumber > 16) 
+    {
+        printf("INVALID\n");
+    }
+    else
+    {
+        printf("Check number validity\n");
+    }
+    
     
     // PRINT IF VALID AND WHAT TYPE OF CARD
     
