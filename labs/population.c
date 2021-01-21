@@ -3,14 +3,23 @@
 
 int main(void)
 {
-    // TODO: Prompt for start size
-    int initialPopulation = get_int("Start size: ");
-    // TODO: Prompt for end size
-    int endPopulation = get_int("End size: ");
+    int startPopulation;
+    do 
+    {
+        startPopulation = get_int("Start size: ");
+    }
+    while (startPopulation < 9);
+    
+    int endPopulation;
+    do
+    {
+        endPopulation = get_int("End size: ");
+    }
+    while (endPopulation < startPopulation);
 
     // TODO: Calculate number of years until we reach threshold
     int years = 0;
-    int currentPopulation = initialPopulation;
+    int currentPopulation = startPopulation;
     int births = 3;
     int deaths = 4;
 
