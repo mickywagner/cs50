@@ -30,6 +30,29 @@ int main(void)
     printf("\n");
     printf("%i\n", sum);
     
+    // Get digits to multiply then add
+    long multiplied = creditCardNumber / 10;
+    int sumOfMultiplied = 0;
+    
+    while (multiplied > 0)
+    {
+        printf("%lo", multiplied % 10);
+        
+        if (multiplied % 10 * 2 > 10) 
+        {
+            sumOfMultiplied = sumOfMultiplied + 1 + (multiplied % 10 * 2  % 10);
+        }
+        else 
+        {
+            sumOfMultiplied = sumOfMultiplied + (multiplied % 10 * 2);
+        }
+        
+        multiplied = multiplied / 100;
+    }
+    
+    printf("\n");
+    printf("%i\n", sumOfMultiplied);
+   
     // 1 0 0 0 0 6 0 4  -- ones to multiply
     // 4 0 0 0 0 0 3 0 -- ones to add
     
