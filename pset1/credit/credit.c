@@ -15,62 +15,64 @@ int main(void)
     {
         printf("INVALID\n");
     }
-    
-    
-    // GETS digits not multiplied by 2
-    long notMultiplied = creditCardNumber;
-    int sum = 0;
-    
-    while (notMultiplied > 0)
+    else 
     {
-        printf("%lo", notMultiplied % 10);
-        sum = sum + notMultiplied % 10;
-        notMultiplied = notMultiplied / 100;
-    }
-    printf("\n");
-    printf("%i\n", sum);
-    
-    // Get digits to multiply then add
-    long multiplied = creditCardNumber / 10;
-    int sumOfMultiplied = 0;
-    
-    while (multiplied > 0)
-    {
-        printf("%lo", multiplied % 10);
+        // GETS digits not multiplied by 2
+        long notMultiplied = creditCardNumber;
+        int sum = 0;
         
-        if (multiplied % 10 * 2 > 10) 
+        while (notMultiplied > 0)
         {
-            sumOfMultiplied = sumOfMultiplied + 1 + (multiplied % 10 * 2  % 10);
-        }
-        else 
-        {
-            sumOfMultiplied = sumOfMultiplied + (multiplied % 10 * 2);
+            sum = sum + notMultiplied % 10;
+            notMultiplied = notMultiplied / 100;
         }
         
-        multiplied = multiplied / 100;
+        // Get digits to multiply then add
+        long multiplied = creditCardNumber / 10;
+        int sumOfMultiplied = 0;
+        
+        while (multiplied > 0)
+        {
+            if (multiplied % 10 * 2 > 9) 
+            {
+                sumOfMultiplied = sumOfMultiplied + 1 + (multiplied % 10 * 2  % 10);
+            }
+            else 
+            {
+                sumOfMultiplied = sumOfMultiplied + (multiplied % 10 * 2);
+            }
+            
+            multiplied = multiplied / 100;
+        }
+       
+        int totalSumOfDigits = sum + sumOfMultiplied;
+    
+        // checks if card is valid and prints type
+        if (totalSumOfDigits % 10 != 0) 
+        {
+            printf("INVALID\n");
+        }
+        else
+        {
+            if (creditCardNumber / 1000000000000000 == 4 || creditCardNumber / 1000000000000 == 4)
+            {
+                printf("VISA\n");
+            }
+            else if (creditCardNumber / 10000000000000 == 34 || creditCardNumber / 10000000000000 == 37)
+            {
+                printf("AMEX\n");
+            }
+            else if (creditCardNumber / 100000000000000 >= 51 && creditCardNumber / 100000000000000 < 56)
+            {
+                printf("MASTERCARD\n");
+            }
+            else 
+            {
+                printf("INVALID\n");
+            }
+        }
     }
-    
-    printf("\n");
-    printf("%i\n", sumOfMultiplied);
-   
-    // 1 0 0 0 0 6 0 4  -- ones to multiply
-    // 4 0 0 0 0 0 3 0 -- ones to add
-    
-  
-    
-    
-    // PRINT IF VALID AND WHAT TYPE OF CARD
-    
-    // multiply every other digit by 2 starting with the 2nd to last number
-    // then add the products together for sumOfMultiplied
-    
-    // Add sumOfMultiplied to sum of digits starting from end that weren't multiplied
-    
-    // Total of sums % 10 == 0 is valid
-    
-
-    // (length = 15 && starts with 34 || 37) printf("AMERICAN EXPRESS\n")
-    // (length = 16 && starts with 51, 52, 53, 54, 55) printf("MASTERCARD\n")
-    // (length = 13 || 16 starts with 4) printf("VISA\N")
     
 }
+
+
