@@ -17,45 +17,43 @@ int main(void)
     // Score both words
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
-    
-    printf("%i\n", score1);
-    printf("%i\n", score2);
 
     // Print the winner
     if (score1 > score2)
     {
-        printf("Player 1 wins!");
+        printf("Player 1 wins!\n");
     }
     else if (score1 < score2) 
     {
-        printf("Player 2 wins!");
+        printf("Player 2 wins!\n");
     }
     else 
     {
-        printf("Tie!");
+        printf("Tie!\n");
     }
 }
 
 int compute_score(string word)
 {
-    int score;
+    int score = 0;
+    int index;
+    const int ASCII_LOWERCASE_A = 97;
+    const int ASCII_UPPERCASE_A = 65;
     
     for (int i = 0, n = strlen(word); i < n; i++ ) 
     {
         if (islower(word[i])) 
         {
-            printf("%i \n", word[i] - 97);
-            // subtract 97 to get POINTS index to add to score
+            index = word[i] - ASCII_LOWERCASE_A;
         }
         else
         {
-            printf("%i \n", word[i] - 65);
-            // subtract 65 to get POINTS index to add to score
+           index = word[i] - ASCII_UPPERCASE_A ;
         }
-      
+        score = score + POINTS[index];
     }
     
-    return 1;
+    return score;
 }
 
 // A - Z 65 - 90
