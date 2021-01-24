@@ -5,7 +5,13 @@
 
 int main(void)
 {
-    string text = get_string("Text: ");
+    string text;
+    do
+    {
+        text = get_string("Text: ");
+    } 
+    while (strlen(text) < 1);
+   
     
     // TODO: Count letters, words, and sentences in text
     int words = 1;
