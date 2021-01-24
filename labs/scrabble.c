@@ -40,7 +40,7 @@ int compute_score(string word)
     const int ASCII_LOWERCASE_A = 97;
     const int ASCII_UPPERCASE_A = 65;
     
-    for (int i = 0, n = strlen(word); i < n; i++ ) 
+    for (int i = 0, n = strlen(word); i < n; i++) 
     {
         if (islower(word[i])) 
         {
@@ -48,7 +48,7 @@ int compute_score(string word)
         }
         else
         {
-           index = word[i] - ASCII_UPPERCASE_A ;
+            index = word[i] - ASCII_UPPERCASE_A ;
         }
         score = score + POINTS[index];
     }
