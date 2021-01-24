@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
 
 int main(void)
 {
@@ -15,5 +16,15 @@ int main(void)
     // s = average number of sentences per 100 words
     
     // TODO: Print out "Grade X" X is the grade
-    
+    if (gradeLevel < 1)
+    {
+        printf("Before Grade 1\n");
+    } else if (gradeLevel > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %i\n", gradeLevel);
+    }
 }
