@@ -27,19 +27,21 @@ int main(int argc, string argv[])
     int shiftAmount = atoi(argv[1]);
   
     string plaintext = get_string("plaintext: ");
+    
     printf("plaintext: %s\n", plaintext);
     printf("ciphertext: ");
-    
+
+    // Shift each character and print
     for (int i = 0, n = strlen(plaintext); i < n; i++)
     {
         if(islower(plaintext[i]))
         {
-            char newCode = plaintext[i] + 2;
+            int newCode = (plaintext[i] - 97 + shiftAmount) % 26 + 97;
             printf("%c", newCode);
         }
         else if (isupper(plaintext[i]))
         {
-            int newCode = plaintext[i] + 2;
+            int newCode = (plaintext[i] - 65 + shiftAmount) % 26 + 65;
             printf("%c", newCode);
         }
         else 
@@ -49,16 +51,6 @@ int main(int argc, string argv[])
     }
     
     printf("\n");
-    
-   
-    
-   
-   
-    
-    // Output ciphertext for alphabetic character, non alpha characters stay the same
-    // shift items according to ascii chart and loop around once finished
-    // check if capital or lowercase
-    
-    // Finally print a newline and exit by returning 0
+    return 0;
    
 }
