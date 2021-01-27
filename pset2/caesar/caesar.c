@@ -25,13 +25,35 @@ int main(int argc, string argv[])
     
     // Convert string argument to integer
     int shiftAmount = atoi(argv[1]);
-    printf("Success\n");
-    printf("%i\n", shiftAmount);
+  
+    string plaintext = get_string("plaintext: ");
+    printf("plaintext: %s\n", plaintext);
+    printf("ciphertext: ");
     
-    // Make sure command line argument is digits only
-    // If not return 1 and print Usage: ./caesar key 
+    for (int i = 0, n = strlen(plaintext); i < n; i++)
+    {
+        if(islower(plaintext[i]))
+        {
+            char newCode = plaintext[i] + 2;
+            printf("%c", newCode);
+        }
+        else if (isupper(plaintext[i]))
+        {
+            int newCode = plaintext[i] + 2;
+            printf("%c", newCode);
+        }
+        else 
+        {
+            printf("%c", plaintext[i]);
+        }
+    }
     
-    // Prompt user for plaintext: as a string 
+    printf("\n");
+    
+   
+    
+   
+   
     
     // Output ciphertext for alphabetic character, non alpha characters stay the same
     // shift items according to ascii chart and loop around once finished
