@@ -5,8 +5,12 @@ int main(int argc, string argv[])
 {
     if (argc != 2) 
     {
-        printf("Only one argument is allowed\n");
+        printf("Usage: ./caesar key\n");
         return 1; 
+    }
+    else 
+    {
+        printf("Succss\n");
     }
     
     // Make sure command line argument is digits only
