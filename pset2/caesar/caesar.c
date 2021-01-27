@@ -17,8 +17,8 @@ int main(int argc, string argv[])
         {
             if (!isdigit(argv[1][i])) 
             {
-            printf("Usage: ./caesar key\n");
-            return 1;
+                printf("Usage: ./caesar key\n");
+                return 1;
             }
         }
     }
@@ -31,10 +31,10 @@ int main(int argc, string argv[])
     printf("plaintext: %s\n", plaintext);
     printf("ciphertext: ");
 
-    // Shift each character and print
+    // Shift each character to 0 index alphabet so it loops when range is too high and print each char
     for (int i = 0, n = strlen(plaintext); i < n; i++)
     {
-        if(islower(plaintext[i]))
+        if (islower(plaintext[i]))
         {
             int newCode = (plaintext[i] - 97 + shiftAmount) % 26 + 97;
             printf("%c", newCode);
