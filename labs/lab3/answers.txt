@@ -1,11 +1,28 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?: 
 
-sort2 uses: TODO
+Bubble sort's effectiveness on the slow end is on the order of O(n**2) and an omega of n. 
+When the programs were run using sort1 there was a major difference between the random 
+files and the sorted. For each length list, the already sorted list was significantly quicker,
+indicating an omega n performance.
 
-How do you know?: TODO
+sort2 uses: Merge Sort
 
-sort3 uses: TODO
+How do you know?:
 
-How do you know?: TODO
+Merge sort has n log n both for O and Omega. This is demonstrated when sorting for a randomized 
+and sorted data set took basically the same amount of time. Furthermore sort2 was significantly
+more efficient than either sort1 or sort 3 on both the random and reversed data. Only on an already
+sorted list did sort1 (bubble sort) perform better with an O(n) being quicker than O(n log n).
+
+sort3 uses: Selection Sort
+
+How do you know?:
+
+Selection sort has an upper and lower bound both of n**2. As such, regardless of the data set, the 
+sorting efficiency of this program was basically the same, regardless of whether data was already 
+sorted or completely random.
+
+
+
